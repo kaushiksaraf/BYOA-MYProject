@@ -1,0 +1,77 @@
+
+#img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#61A4BC;
+    object-fit: cover;
+    margin: 30px;
+    padding: 30px;
+
+    border-radius: 10px;
+    color:aliceblue;
+    height: 500px;
+    text-align: center;
+    
+}
+
+.animated-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "Youtuber";
+    color: #7858A6;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #2f3542;
+    border-left: 2px solid #ff7f50;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Unforgettable Adventures Await with Yatraverse: Are You Ready?";
+    }
+     21%,40%{
+        content: "Explore the Unknown with Yatraverse: Your Ticket to Adventure";
+    }
+    41%,60%{
+        content: "Yatraverse: Unleashing the Thrill-Seeker in You";
+    } 
+    21%,80%{
+        content: "Take Your Travel Game to the Next Level with Yatraverse";
+    }
+    81%,100%{
+        content: "Get Lost in Adventure with Yatraverse: Your Ultimate Travel Companion";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% );
+    }
+}
