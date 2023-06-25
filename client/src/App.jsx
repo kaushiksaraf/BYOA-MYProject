@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/HomePage.jsx";
 import SignUP from "./components/SignUp/signup.jsx";
-import About from "./components/About-Us/about";
+import About from "./components/About-Us/About.jsx";
 import Contact from "./components/ContactUs/Contact.jsx"
-import Explore from "./components/Explore/Explore";
+import Explore from "./components/Explore/Explore.jsx";
 function App() {
   return (
     <>
