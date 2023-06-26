@@ -6,6 +6,10 @@ import SignUP from "./components/SignUp/signup.jsx";
 import About from "./components/About-Us/About.jsx";
 import Contact from "./components/ContactUs/Contact.jsx"
 import Explore from "./components/Explore/Explore.jsx";
+import Place from "./components/place/Place";
+import PlaceGoa from "./components/place/place-goa";
+import PlaceShimla from "./components/place/place-shimla";
+import PlaceKerala from "./components/place/place-kerela";
 function App() {
   return (
     <>
@@ -15,6 +19,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignUP />} />
+        <Route path="/explore/goa" element={<PlaceGoa/>}/>
+        <Route path="/explore/shimla" element={<PlaceShimla/>}/>
+        <Route path="/explore/kerela" element={<PlaceKerala/>}/>
       </Routes>
     </>
   );
