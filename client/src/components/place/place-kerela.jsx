@@ -1,5 +1,5 @@
 import NavBar from "../Navbar/Navbar.jsx";
-import Place from "./Place";
+import Place from "./Place.jsx";
 import Footer from "../Footer/Footer.jsx";
 
 function PlaceKerala() {
