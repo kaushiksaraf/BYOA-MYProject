@@ -1,69 +1,138 @@
 
 
-function create(user, callback) {
-    const bcrypt = require('bcrypt');
-    const MongoClient = require('mongodb@3.1.4').MongoClient;
-    const client = new MongoClient('mongodb://user:pass@localhost');
-  
-    client.connect(function (err) {
-      if (err) return callback(err);
-  
-      const db = client.db('db-name');
-      const users = db.collection('users');
-  
-      users.findOne({ email: user.email }, function (err, withSameMail) {
-        if (err || withSameMail) {
-          client.close();
-          return callback(err || new Error('the user already exists'));
-        }
-  
-        bcrypt.hash(user.password, 10, function (err, hash) {
-          if (err) {
-            client.close();
-            return callback(err);
-          }
-  
-          user.password = hash;
-          users.insert(user, function (err, inserted) {
-            client.close();
-  
-            if (err) return callback(err);
-            callback(null);
-          });
-        });
-      });
-    });
-  }
-  
+import User from "../model/user.js";
+import bcrypt from "bcrypt";
+import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
 
-  function login(email, password, callback) {
-    const bcrypt = require('bcrypt');
-    const MongoClient = require('mongodb@3.1.4').MongoClient;
-    const client = new MongoClient('mongodb://user:pass@localhost');
-  
-    client.connect(function (err) {
-      if (err) return callback(err);
-  
-      const db = client.db('db-name');
-      const users = db.collection('users');
-  
-      users.findOne({ email: email }, function (err, user) {
-        if (err || !user) {
-          client.close();
-          return callback(err || new WrongUsernameOrPasswordError(email));
-        }
-  
-        bcrypt.compare(password, user.password, function (err, isValid) {
-          client.close();
-  
-          if (err || !isValid) return callback(err || new WrongUsernameOrPasswordError(email));
-  
-          return callback(null, {
-              user_id: user._id.toString(),
-              nickname: user.nickname,
-              email: user.email
-            });
-        });
-      });
-    });
+dotenv.config();
+
+const getUsers = async (req, res, next) => {
+  try {
+    const users = await user.find();
+    res.send(users);
+  } catch (error) {
+    res.send("users not found");
+    next();
   }
+};
+
+const getUserByID = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const getuser = await user.findOne({ _id: id });
+    if (getuser) {
+      console.log(getuser);
+      res.send(getuser);
+    } else {
+      res.send("error finding user");
+    }
+  } catch (error) {
+    console.log("error getting user with id");
+    next(error);
+  }
+};
+
+const registeruser = async (req, res, next) => {
+  try {
+    const { firstName, lastName, email, password } = req.body;
+
+    // Hashing the password
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(password, salt);
+
+    let user = {
+      firstName,
+      lastName,
+      email,
+      password: hashPassword,
+    };
+    console.log(req.body);
+    console.log(user);
+    await User.create(user);
+    if (user) {
+      let token = jwt.sign(
+        { userid: user._id },
+        process.env.JWT_secret_key,
+        { expiresIn: "10h" }
+      );
+      console.log(token);
+
+      res.cookie("hash", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== "development", //For HTTPS on the production
+        sameSite: "strict", //prevent CSRF Attacks
+        maxAge: 7 * 24 * 60 * 60,
+      });
+    }
+
+    res.send("user successfully signed up");
+  } catch (error) {
+    res.send("failed user register process");
+    next();
+  }
+};
+
+const userLogin = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    const loginUser = await User.findOne({ email });
+
+    if (!loginUser) {
+      res.status(404);
+      next(new Error("user not found"));
+    }
+
+    const matchpassword = await bcrypt.compare(password, loginUser.password);
+    if (!matchpassword) {
+      res.status(404);
+      next(new Error("invalid credentials"));
+    }
+
+    if (loginUser && matchpassword) {
+      let token = jwt.sign(
+        { userid: loginUser._id },
+        process.env.JWT_secret_key,
+        { expiresIn: "10h" }
+      );
+
+      res.cookie("hash", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== "development", //For HTTPS on the production
+        sameSite: "strict", //prevent CSRF Attacks
+        maxAge: 7 * 24 * 60 * 60,
+      });
+
+      res.json({
+        id: loginUser._id,
+        name: loginUser.name,
+        email: loginUser.email,
+      });
+    }
+  } catch (error) {
+    res.send("error in login endpoint");
+  }
+};
+
+const logoutUser= (req, res, next) => {
+  try {
+    res.cookie("hash", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
+
+    res.status(200).json({ msg: "Logging Out user" });
+  } catch (error) {
+    console.log("error in logout endpoint");
+    next(err);
+  }
+};
+
+export {
+  getUsers,
+  getuserByID,
+  registeruser,
+  userLogin,
+  logoutUser,
+};
+

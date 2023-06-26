@@ -14,12 +14,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#61A4BC;
+    /* background-color:#61A4BC; */
     background-image: linear-gradient(#CCD5AE,#A4BC92);
   
 
    
-    color:aliceblue;
+    /* color:aliceblue; */
     height: 500px;
     text-align: center;
     
