@@ -1,24 +1,24 @@
+body{
+    background-color: lightblue;
+    background-image: linear-gradient(teal,orange);
 
+}
 
-
-
-img{
+.homeimg{
     width: 100%;
     height: 100%;
 }
 
-
-#img{
+#box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color:#61A4BC;
-    object-fit: cover;
-    margin: 30px;
-    padding: 30px;
+    background-image: linear-gradient(#CCD5AE,#A4BC92);
+  
 
-    border-radius: 10px;
+   
     color:aliceblue;
     height: 500px;
     text-align: center;

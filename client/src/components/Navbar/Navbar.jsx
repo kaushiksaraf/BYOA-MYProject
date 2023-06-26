@@ -15,8 +15,8 @@ function NavBar() {
     <span className="navbar-toggler-icon"></span>
   </button> */}
 
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto  list">
+      <div className="collapse navbar-collapse text-end" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto  list   ">
           <li className="nav-item active">
             <Link to="/explore" className="nav-link">
               Explore<span className="sr-only">(current)</span>
@@ -44,7 +44,7 @@ function NavBar() {
                
               <button
                 type="button"
-                class="btn btn-primary btn-lg"
+                className="btn btn-primary btn-lg"
                 onClick={() =>
                   logout({ logoutParams: { returnTo: window.location.origin } })
                 }
@@ -55,7 +55,7 @@ function NavBar() {
           ) : (
             <button
               type="button"
-              class="btn btn-primary btn-lg"
+              className="btn btn-primary btn-lg"
               onClick={() => loginWithRedirect()}
             >
               Log In

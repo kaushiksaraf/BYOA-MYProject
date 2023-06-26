@@ -1,28 +1,22 @@
 import NavBar from "../Navbar/Navbar.jsx";
-import { Button, ButtonGroup, Image } from "@chakra-ui/react";
+
 import { Heading } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
-import { Divider } from "@chakra-ui/react";
 
 import Carousal from "../Carousal/Carousal.jsx";
 import img from "../../assets/10.jpg";
 import "./home.css";
 import Hero from "../Hero/Hero.jsx";
 import Footer from "../Footer/Footer.jsx";
+import img1 from "../../assets/4.jpg"
 
 function Home() {
   return (
     <>
       <NavBar />
-      <Hero
-      herotitlebox="titebox"
-        className="hero"
-        altname="herohomeimg"
-        title="Yatraverse"
-        paragraph="Esacpe To Mundane"
-        heroimg="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-      />
-      <div id="img">
+      <Carousal/>
+    {/* <img src={img1} className="homeimg" alt="homeimg"/> */}
+      <div id="box">
         <Heading>"Discover the World with Yatraverse"</Heading>
 
         <Text fontSize="xl" noOfLines={[1, 2]}>
@@ -35,7 +29,7 @@ function Home() {
         <div className="animated-text">
           <span></span>
         </div>
-      </div>
+      </div> 
       <Footer />
 
       {/* <section>

@@ -1,32 +1,24 @@
+import Card from "../Card/Card.jsx";
+import Footer from "../Footer/Footer.jsx";
 import NavBar from "../Navbar/Navbar";
-
-
+import "./explore.css";
+import img from "../../assets/1.jpg";
 
 function Explore() {
+  return (
+    <>
+      <NavBar />
+      <img alt="image" className="image" src={img} />
 
+      <form className="form-inline my-2 my-lg-0  search">
+        <input type="search" className="input" placeholder="Search" />
+        <button type="submit">Search</button>
+      </form>
+      <Card/>
 
-
-
-
-
-    return ( <>
-    <NavBar/>
-
-    <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-    </> );
+      <Footer />
+    </>
+  );
 }
 
 export default Explore;

@@ -1,16 +1,22 @@
+import "./hero.css"
+
 function Hero(props) {
   return (
-    <div>
-      <img
-      className={props.className}
+    <>
+    <div className={props.hero}>
+    <h1 >{props.title}</h1>
+      <p >{props.para}</p>
+      {/* <img
+     
         alt={props.altname}
         src={props.heroimg}
       />
-<div className={props.herotitlebox}>
-      <h1 className={props.heading}>{props.title}</h1>
-      <p className={props.para}>{props.paragraph}</p>
-      </div>
+ <div className="herotitle">
+      <h1 >{props.title}</h1>
+      <p >{props.para}</p>
+      </div>  */}
     </div>
+    </>
   );
 }
 

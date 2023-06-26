@@ -1,9 +1,16 @@
 import NavBar from "../Navbar/Navbar";
-
+import Hero from "../Hero/Hero.jsx"
+import Footer from "../Footer/Footer.jsx";
+import about from "../../assets/12.jpg"
+import "./about.css"
 function About() {
   return (
     <div>
-      <NavBar /> Yatraverse offers a curated selection of
+      <NavBar /> 
+      <img src={about}  className="abtimg"  alt="contactimg"/>
+      
+      
+      Yatraverse offers a curated selection of
       destinations that are truly unique. Here are just a few examples:
       <section>
       Salar de Uyuni, Bolivia This otherworldly landscape was created by
@@ -54,7 +61,9 @@ function About() {
       personalized experiences, and responsible travel practices, we're the
       perfect choice for your next adventure. Contact us today to start planning
       your trip.</section>
+      <Footer/>
     </div>
+    
   );
 }
 

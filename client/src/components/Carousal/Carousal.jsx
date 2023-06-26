@@ -19,22 +19,22 @@ function Carousal() {
           <div className="carousel-item active">
             <img className="d-block w-100" src={img10} alt="First slide" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>this is first img</h5>
-              <p>...</p>
+              <h2>Yatraverse</h2>
+              <p>Unlock the Adventure in you</p>
             </div>
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src={img1} alt="Second slide" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>this is first img</h5>
-              <p>...</p>
+              <h2>Yatraverse</h2>
+              <p>Escape The Mundane</p>
             </div>
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src={img4} alt="Third slide" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>this is first img</h5>
-              <p>...</p>
+              <h2>Yatraverse</h2>
+              <p>Your Vaction Starts Here</p>
             </div>
           </div>
         </div>

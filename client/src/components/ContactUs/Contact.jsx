@@ -1,26 +1,28 @@
-import NavBar from "../Navbar/Navbar";
-import "./contact.css"
+import NavBar from "../Navbar/Navbar.jsx";
+import Hero from "../Hero/Hero.jsx";
+import Footer from "../Footer/Footer.jsx"
+ import "./contact.css";
+ import img2 from "../../assets/contact.avif"
 
 function Contact() {
   return (
-<>
-    <NavBar/>
-    <form className="group">
-  <div class="form-group">
-    <label for="formGroupExampleInput">Name</label>
-    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="name"/>
-  </div>
-  <div className="form-group">
-    <label for="formGroupExampleInput2">Email</label>
-    <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="email"/>
-  
-  </div>
-  <div className="form-group ">
-    <label for="formGroupExampleInput2">Message</label>
-    <input type="text" className="form-control msg"  placeholder="write your message here"/>
-  
-  </div>
-</form>
+    <>
+      <NavBar />
+<img src={img2}  className="cntimg"  alt="contactimg"/>
+      
+
+      <div className="contact">
+        <label>Name</label>
+        <input type="text" className="" placeholder="name" />
+
+        <label>Email</label>
+        <input type="text" className="" placeholder="email" />
+
+        <label>Message</label>
+        <input type="text" className="msg" placeholder="write your message here" />
+        <button>Submit</button>
+      </div>
+      <Footer/>
     </>
   );
 }
