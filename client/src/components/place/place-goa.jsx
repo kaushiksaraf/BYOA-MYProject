@@ -30,8 +30,8 @@ function PlaceGoa() {
         title="Palolem Beach"
         img="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/3e/36/9c/palolem-sea-beach.jpg?w=800&h=-1&s=1"
         desc="
-        Palolem Beach Goa – Attractions, Adventure, Water Sports ...
-        It's known for its beautiful crescent – shape which makes it possible to see both the ends from the centre of the beach. Featured in Matt Damon English Movie The Bourne Supremacy; it's another kind of beach with Green Island; its definitely one of the places to be in."
+        Palolem Beach Goa  Attractions, Adventure, Water Sports ...
+        It's known for its beautiful crescent  shape which makes it possible to see both the ends from the centre of the beach. Featured in Matt Damon English Movie The Bourne Supremacy; it's another kind of beach with Green Island; its definitely one of the places to be in."
       />
       <Place
         title="Shanta Durga Temple"

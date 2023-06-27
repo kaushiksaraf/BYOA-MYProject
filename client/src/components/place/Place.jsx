@@ -1,5 +1,4 @@
-import Footer from "../Footer/Footer.jsx";
-import NavBar from "../Navbar/Navbar.jsx";
+
 import "./place.css"
 
 function Place(props) {
