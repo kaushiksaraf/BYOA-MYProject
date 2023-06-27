@@ -1,52 +1,54 @@
-import mongoose from "mongoose";
 
-import Place from "../models/place.js";
-import placeSchema from "../models/place.js";
-// import Area from "../models/area.js";
 
-// const createArea = async (req, res) => {
-//   try {
-//     const { area1, area2, area3, area4, area5 } = req.body;
-
-//     let area = { area: [{ area1, area2, area3, area4, area5 }] };
-//     console.log(area);
-//     const result = await Area.create(area);
-//     console.log(result);
-
-//     res.json(result);
-//   } catch (error) {
-//     console.log(error);
-//     res.send("err in area data");
-//   }
-// };
-// const getArea = async (req, res) => {
-//   const getareas = await Area.find();
-//   res.send(getareas);
-// };
+import City from "../models/city.js";
+import Place from "../models/place.js"
 
 
 
-const createPlaces = async (req, res) => {
+
+const createCity = async (req, res) => {
   try {
-    const { title, img, category, visitplaces} = req.body;
-   let place={
-    title,
+    const { city, img, category} = req.body;
+   const cities= await City.create({
+    city,
     img,
-    category,
-    visitplaces,
-   }
+    category
+   })
 
-    await Place.create(place);
+    if(cities){
+      res.json(cities)
+    }else{
+      res.json("error in cities controllers")
+    }
 
-    res.send("Place created");
+  
   } catch (error) {
     console.log("Error in POST method:", error);
     res.json({ message: "Error in POST method" });
   }
 };
 
-// const getPlaces = async (req, res) => {
-//   const places = await Place.find();
-//   res.send(places);
-// };
-export { createPlaces };
+// const getPlaceByCity=()=> {
+//   const {city}=req.params
+// }
+
+const createPlaces=async (req,res)=> {
+  try {
+    const{id}=req.params;
+    const{place}=req.body
+const places=await Place.create({
+ city:id,
+  place
+})
+
+res.json(places)
+    
+  } catch (error) {
+    console.log(error)
+    res.json("error in place controlls")
+  }
+
+}
+
+
+export { createCity ,createPlaces};
