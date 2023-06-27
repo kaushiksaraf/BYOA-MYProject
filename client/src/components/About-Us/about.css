@@ -4,3 +4,46 @@
     object-fit: cover;
 
 }
+
+.section{
+    margin: 10px;
+    padding:20px 20px;
+    text-transform:capitalize;
+   background-color: beige;
+}
+.twin{
+    display: flex;
+    width: 100%;
+}
+
+.section1{
+    margin: 10px;
+    padding:20px 20px;
+    text-transform:capitalize;
+   background-color: beige;
+}
+.section2{
+    margin: 10px;
+    padding:20px 20px;
+    text-transform:capitalize;
+   background-color: beige;
+}
+.section3{
+    margin: 10px;
+    padding:20px 20px;
+ 
+    text-transform:capitalize;
+   background-color: beige;
+
+}
+.section4{
+    margin: 10px;
+    padding:20px 20px;
+    text-transform:capitalize;
+   background-color: beige;
+  
+}
+
+ 
+
+
