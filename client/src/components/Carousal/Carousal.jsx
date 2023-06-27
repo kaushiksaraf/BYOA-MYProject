@@ -25,7 +25,7 @@ function Carousal() {
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src={img1} alt="Second slide" />
-            <div class="carousel-caption d-none d-md-block  titlebox">
+            <div className="carousel-caption d-none d-md-block  titlebox">
               <h1>Yatraverse</h1>
               <h2>Escape The Mundane</h2>
             </div>

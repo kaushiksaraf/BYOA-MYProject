@@ -1,5 +1,5 @@
 import NavBar from "../Navbar/Navbar.jsx";
-
+import axios from "axios";
 import Footer from "../Footer/Footer.jsx";
 import "./contact.css";
 import img2 from "../../assets/contact.avif";
@@ -21,10 +21,14 @@ function Contact() {
   };
 
   console.log(name, email, message);
+
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const res = await fetch("/contact", {
-      method: "POST",
+  e.preventDefault();
+
+  try {
+    const response = await axios.post("http://localhost:9000/contact", {
+      
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name,
@@ -33,13 +37,17 @@ function Contact() {
       }),
     });
 
-    console.log(res);
-    if (!res) {
-      alert("invalid submit");
+    if (response.status === 200) {
+      alert("Successfully submitted");
     } else {
-      alert("succesfully submitted");
+      alert("Invalid submit");
     }
-  };
+  } catch (error) {
+    console.error(error);
+    alert("Error submitting the form");
+  }
+};
+
 
   return (
     <>
@@ -76,7 +84,7 @@ function Contact() {
         <button type="submit">Submit</button>
       </form> */}
 
-      <form className="contact">
+      <form className="contact" onSubmit={handleSubmit}>
         <label>Name</label>
         <input
           type="text"
