@@ -44,7 +44,7 @@ function NavBar() {
                
               <button
                 type="button"
-                className="btn btn-primary btn-lg"
+                className="btn"
                 onClick={() =>
                   logout({ logoutParams: { returnTo: window.location.origin } })
                 }
@@ -55,7 +55,7 @@ function NavBar() {
           ) : (
             <button
               type="button"
-              className="btn btn-primary btn-lg"
+              className="btn"
               onClick={() => loginWithRedirect()}
             >
               Log In

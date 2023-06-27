@@ -6,10 +6,10 @@ import SignUP from "./components/SignUp/signup.jsx";
 import About from "./components/About-Us/About.jsx";
 import Contact from "./components/ContactUs/Contact.jsx"
 import Explore from "./components/Explore/Explore.jsx";
-import Place from "./components/place/Place.jsx";
-import PlaceGoa from "./components/place/place-goa.jsx";
-import PlaceShimla from "./components/place/place-shimla.jsx";
-import PlaceKerala from "./components/place/place-kerela.jsx";
+import Place from "./components/Place/Place.jsx";
+import PlaceGoa from "./components/Place/Place-goa.jsx";
+import PlaceShimla from "./components/Place/Place-shimla.jsx";
+import PlaceKerala from "./components/Place/Place-kerela.jsx";
 function App() {
   return (
     <>
