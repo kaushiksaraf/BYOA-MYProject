@@ -6,7 +6,7 @@ function PlaceKerala() {
   return (
     <>
     <NavBar/>
-    <h2>TRIP TO Kerala</h2>
+    <h2> Kerala</h2>
       <Place
       
         title="Munnar"

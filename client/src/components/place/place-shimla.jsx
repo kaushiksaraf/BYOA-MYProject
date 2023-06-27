@@ -6,7 +6,7 @@ function PlaceShimla() {
   return (
     <>
       <NavBar />
-      <h2>TRIP TO SHIMLA</h2>
+      <h2> SHIMLA</h2>
       <Place
         title="Jakhu Temple"
         img="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Jakhoo_temple.jpg/220px-Jakhoo_temple.jpg"

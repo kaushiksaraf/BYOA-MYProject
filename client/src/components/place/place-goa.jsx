@@ -6,7 +6,7 @@ function PlaceGoa() {
   return (
     <>
       <NavBar />
-      <h2>TRIP TO GOA</h2>
+      <h2> GOA</h2>
       <Place
         title="DUDSAGAR FALLS"
         img="https://img.veenaworld.com/wp-content/uploads/2021/07/Dudhsagar-Waterfalls-Goa-How-to-Reach-Timings-Tickets.jpeg"

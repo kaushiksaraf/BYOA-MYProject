@@ -29,12 +29,10 @@ function Contact() {
   try {
     const response = await axios.post("http://localhost:9000/contact", {
       
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
+      name,
+      email,
+      message,
+    
     });
 
     if (response.status === 200) {

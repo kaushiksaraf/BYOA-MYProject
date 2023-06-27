@@ -29,7 +29,7 @@ function NavBar() {
           </li>
           <li className="nav-item active">
             <Link to="/contact" className="nav-link">
-              Contact Form
+              Contact Us
             </Link>
           </li>
            {isAuthenticated && (
