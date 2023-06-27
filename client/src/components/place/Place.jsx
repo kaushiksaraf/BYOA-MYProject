@@ -10,7 +10,7 @@ function Place(props) {
 <div className="box">
 
 <img className="img" src={props.img} alt={props.alt}/>
-<p>{props.desc}</p>
+<p className="desc">{props.desc}</p>
 </div>
 
 
