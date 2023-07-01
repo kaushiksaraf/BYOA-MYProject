@@ -13,6 +13,11 @@ const citySchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  desc:{
+    type: String,
+    required: true,
+  },
+  places:[{type:mongoose.Types.ObjectId,ref:"Place"}]
 });
 
 const City = mongoose.model("City", citySchema);

@@ -8,11 +8,12 @@ import Place from "../models/place.js"
 
 const createCity = async (req, res) => {
   try {
-    const { city, img, category} = req.body;
+    const { city, img, category,desc} = req.body;
    const cities= await City.create({
     city,
     img,
-    category
+    category,
+    desc
    })
 
     if(cities){
@@ -28,17 +29,28 @@ const createCity = async (req, res) => {
   }
 };
 
-// const getPlaceByCity=()=> {
-//   const {city}=req.params
-// }
+const getCities=async (req,res)=> {
+  try {
+    const cities=await City.find()
+    console.log(cities)
+    res.json(cities)
+  } catch (error) {
+    console.log(error)
+    res.json("error in getting cities")
+  }
+ 
+
+}
 
 const createPlaces=async (req,res)=> {
   try {
     const{id}=req.params;
-    const{place}=req.body
+    const{place,img,desc}=req.body
 const places=await Place.create({
  city:id,
-  place
+  place,
+  img,
+  desc,
 })
 
 res.json(places)
@@ -50,5 +62,19 @@ res.json(places)
 
 }
 
+const getPlaces=async(req,res)=> {
+  try {
+   const{id}=req.body;
+    const places=await Place.find({_id:id})
+    console.log(places)
+    res.json(places)
+  } catch (error) {
+    console.log(error)
+    res.json("error in getting places")
+  }
+}
 
-export { createCity ,createPlaces};
+export { createCity ,createPlaces,getPlaces,getCities};
+
+
+

@@ -12,4 +12,12 @@
 .desc{
     padding: 20px 20px 20px 20px;
     background-color: azure;
+
+}
+
+h2{
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
 }

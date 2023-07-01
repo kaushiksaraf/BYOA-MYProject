@@ -24,7 +24,7 @@ function Explore() {
 
       <form className="form-inline my-2 my-lg-0  search">
         <input type="search"   onChange={(e) => handleSearch(e)} className="input" placeholder="Search" />
-        <button type="submit">Search</button>
+       
       </form>
       <Card />
 

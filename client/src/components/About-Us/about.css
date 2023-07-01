@@ -10,6 +10,7 @@
     padding:20px 20px;
     text-transform:capitalize;
    background-color: beige;
+   border-radius: 20px;
 }
 .twin{
     display: flex;
@@ -21,17 +22,19 @@
     padding:20px 20px;
     text-transform:capitalize;
    background-color: beige;
+   border-radius: 20px;
 }
 .section2{
     margin: 10px;
     padding:20px 20px;
     text-transform:capitalize;
    background-color: beige;
+   border-radius: 20px;
 }
 .section3{
     margin: 10px;
     padding:20px 20px;
- 
+    border-radius: 20px;
     text-transform:capitalize;
    background-color: beige;
 
@@ -41,7 +44,7 @@
     padding:20px 20px;
     text-transform:capitalize;
    background-color: beige;
-  
+   border-radius: 20px;
 }
 
  

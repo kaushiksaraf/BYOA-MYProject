@@ -1,6 +1,7 @@
 import NavBar from "../Navbar/Navbar.jsx";
 import Place from "./Place.jsx";
 import Footer from "../Footer/Footer.jsx";
+import "./place.css"
 
 function PlaceGoa() {
   return (
